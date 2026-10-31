@@ -2,6 +2,8 @@
 
 A mobile-friendly, touch-responsive web-based bingo game tailored for exploring historic Main Street Unionville.
 
+🎮 **Live Game Link**: [https://j7892.github.io/unionvillebingo/](https://j7892.github.io/unionvillebingo/)
+
 ## ✨ Features
 
 - **24 Custom Sightseeing Items**: Hand-picked landmarks from Unionville including the Old Planing Mill Water Wheel, Millennium Bandstand, Victorian Lampposts, Old Firehall Tower, and more.
