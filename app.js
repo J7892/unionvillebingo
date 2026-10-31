@@ -5,42 +5,42 @@
 
 // Sightseeing Items Pool (32 items)
 const SIGHTSEEING_ITEMS = [
-  { name: "Port Credit Lighthouse", icon: "🗼" },
-  { name: "Sailboat or Marina Yacht", icon: "⛵" },
-  { name: "Credit River or Boardwalk", icon: "🌊" },
-  { name: "Historic Train Station", icon: "🚂" },
-  { name: "Blue Heritage Plaque", icon: "🏛️" },
-  { name: "Weathervane", icon: "🧭" },
-  { name: "Wooden Footbridge", icon: "🌉" },
-  { name: "Gingerbread House Trim", icon: "🏡" },
-  { name: "Victorian Lamppost", icon: "🏮" },
+  { name: "Train Track Signal Light", icon: "🚦" },
+  { name: "Ornate Street Clock", icon: "🕰️" },
+  { name: "Outdoor Patio String Lights", icon: "✨" },
   { name: "Chalkboard Sidewalk Menu", icon: "📋" },
-  { name: "Black Squirrel or Chipmunk", icon: "🐿️" },
-  { name: "Church Steeple", icon: "⛪" },
-  { name: "Dog Bowl Outside a Shop", icon: "🥣" },
-  { name: "Waterfront Gazebo or Bandshell", icon: "🎪" },
-  { name: "Duck, Goose, or Swan", icon: "🦢" },
-  { name: "Unique stop sign", icon: "🛑" },
-  { name: "Kayak or Paddleboard", icon: "🛶" },
-  { name: "Public Art Sculpture", icon: "🗿" },
-  { name: "Weeping Willow Tree", icon: "🌳" },
-  { name: "Hanging Flower Basket", icon: "🌸" },
-  { name: "Window Planter Box", icon: "🪴" },
+  { name: "Dog Water Bowl", icon: "🥣" },
+  { name: "Port Credit Lighthouse", icon: "🗼" },
+  { name: "Red Bicycle Planter Sculpture", icon: "🚲" },
+  { name: "Sailboat Mast", icon: "⛵" },
+  { name: "Lifesaver on a Post", icon: "🛟" },
+  { name: "Harbour Marina Slip", icon: "⚓" },
+  { name: "Credit River Road Bridge", icon: "🌉" },
+  { name: "Lakeshore Road Sign", icon: "🪧" },
+  { name: "Waterfront Trail Signpost", icon: "🧭" },
+  { name: "Harbour Pier or Breakwater", icon: "🌊" },
+  { name: "Goose/Duck/Swan", icon: "🦢" },
+  { name: "Seagull", icon: "🕊️" },
+  { name: "Stone on the Beach", icon: "🪨" },
+  { name: "Person Fishing", icon: "🎣" },
+  { name: "Playground", icon: "🛝" },
   { name: "Memorial Bench Plaque", icon: "🪑" },
-  { name: "Patio String Lights", icon: "✨" },
-  { name: "Lily Pads or Cattails", icon: "🪷" },
-  { name: "Exposed Brick Chimney", icon: "🧱" },
-  { name: "Cute doggo", icon: "🐶" },
-  { name: "Canadian flag", icon: "🇨🇦" },
+  { name: "Freighter/Large ship", icon: "🚢" },
+  { name: "Canada flag", icon: "🇨🇦" },
+  { name: "Person riding a bike", icon: "🚴" },
+  { name: "Fire truck or ambulance", icon: "🚒" },
+  { name: "Port Credit sign", icon: "🏷️" },
+  { name: "Halloween costume", icon: "🎃" },
+  { name: "Fancy car", icon: "🏎️" },
+  { name: "Two people holding hands", icon: "👫" },
+  { name: "Cute baby", icon: "👶" },
+  { name: "Dog in costume", icon: "🐶" },
   { name: "Ice cream shop", icon: "🍦" },
-  { name: "Someone on a bike", icon: "🚲" },
-  { name: "Fire truck", icon: "🚒" },
   { name: "City bus", icon: "🚌" },
-  { name: "Musician", icon: "🎷" },
 ];
 
 const FREE_SPACE_INDEX = 12; // Center of 5x5 grid (row 2, col 2)
-const STORAGE_KEY = "port_credit_bingo_state_v1";
+const STORAGE_KEY = "port_credit_bingo_state_v2";
 const SOUND_KEY = "port_credit_bingo_sound";
 
 // All 12 possible winning combinations in a 5x5 grid
@@ -203,9 +203,9 @@ function generateNewBoard() {
   for (let i = 0; i < 25; i++) {
     if (i === FREE_SPACE_INDEX) {
       board.push({
-        name: "FREE SPACE",
-        subtext: "Port Credit",
-        icon: "🗼",
+        name: "GO Train",
+        subtext: "FREE SPACE",
+        icon: "🚆",
         isFree: true,
       });
       marked[i] = true; // Free space is checked by default
@@ -306,7 +306,7 @@ function renderBoard() {
     cell.setAttribute("aria-pressed", isMarked ? "true" : "false");
     cell.setAttribute(
       "aria-label",
-      item.isFree ? "Free Space (Visited)" : `${item.name}, ${isMarked ? "Found" : "Not yet found"}`
+      item.isFree ? `${item.name} (Free Space)` : `${item.name}, ${isMarked ? "Found" : "Not yet found"}`
     );
 
     // Icon
@@ -317,7 +317,11 @@ function renderBoard() {
     // Text Label
     const textEl = document.createElement("span");
     textEl.className = "cell-text";
-    textEl.textContent = item.name;
+    if (item.isFree) {
+      textEl.innerHTML = `<strong>${item.name}</strong><br><span style="font-size:0.8em; opacity:0.85;">FREE SPACE</span>`;
+    } else {
+      textEl.textContent = item.name;
+    }
 
     // Red Stamp Overlay
     const stampEl = document.createElement("span");

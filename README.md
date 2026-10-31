@@ -6,8 +6,8 @@ A mobile-friendly, touch-responsive web-based bingo game tailored for exploring 
 
 ## ✨ Features
 
-- **Port Credit Sightseeing Items**: Hand-picked landmarks and spots from Port Credit including the iconic Port Credit Lighthouse, Marina Sailboats & Yachts, Credit River & Boardwalk, Memorial Park Bandshell, Swans, Kayaks, Canadian flags, Ice cream shops, and more. Each card shuffles 24 unique items around the central Free Space.
-- **Classic 5x5 Bingo Grid**: Traditional layout with a dedicated **FREE SPACE** at the center.
+- **Port Credit Sightseeing Items**: 32 hand-picked sights from Port Credit including the Port Credit Lighthouse, Marina Slips & Sailboat Masts, Credit River Bridge, Halloween costumes, dogs in costume, and more. Each card shuffles 24 unique items around the central Free Space.
+- **Classic 5x5 Bingo Grid**: Traditional layout with **GO Train** as the central **FREE SPACE**.
 - **Persistent Progress (`localStorage`)**: Your card layout and marked squares automatically save as you play. Feel free to close the tab, lock your screen, or refresh; your progress remains intact.
 - **Accidental Reshuffle Protection**: Reshuffling warns you with a confirmation modal so you don't lose your marked board by accident.
 - **BINGO Recognition & Celebrations**: Automatically detects winning rows, columns, and diagonals, glowing gold on winning lines and bursting celebratory confetti with congratulatory modals and fanfare.

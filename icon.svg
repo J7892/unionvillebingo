@@ -22,9 +22,9 @@
   <line x1="202" y1="96" x2="202" y2="416" stroke="#dcd4c3" stroke-width="4"/>
   <line x1="308" y1="96" x2="308" y2="416" stroke="#dcd4c3" stroke-width="4"/>
   
-  <!-- Free Space Lighthouse in Center -->
+  <!-- Free Space GO Train in Center -->
   <circle cx="256" cy="256" r="44" fill="#feecc5"/>
-  <text x="256" y="275" font-family="serif" font-size="50" text-anchor="middle" fill="#c0392b">🗼</text>
+  <text x="256" y="275" font-family="serif" font-size="50" text-anchor="middle" fill="#c0392b">🚆</text>
   
   <!-- Stamp Checks in corners -->
   <circle cx="150" cy="150" r="32" fill="#c0392b"/>
