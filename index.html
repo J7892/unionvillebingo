@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#1e3a2f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Unionville Bingo">
+  <meta name="description" content="Sightseeing Bingo for historic Main Street Unionville">
+  <title>Unionville Sightseeing Bingo</title>
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-top">
+        <span class="heritage-badge">Historic Main St.</span>
+        <div class="header-controls">
+          <button id="soundToggleBtn" class="icon-btn" aria-label="Toggle sound" title="Toggle sound">
+            <span id="soundIcon">🔔</span>
+          </button>
+          <button id="helpBtn" class="icon-btn" aria-label="How to play" title="How to play">
+            <span>❓</span>
+          </button>
+        </div>
+      </div>
+      <h1 class="main-title">UNIONVILLE</h1>
+      <p class="subtitle">Sightseeing Bingo</p>
+      
+      <!-- Stats & Bingo Counter Bar -->
+      <div class="status-bar">
+        <div class="stat-pill" id="scorePill">
+          <span class="stat-label">Found:</span>
+          <span class="stat-value" id="markedCount">0</span> / 24
+        </div>
+        <div class="stat-pill bingo-badge" id="bingoBadge">
+          <span class="stat-label">Bingos:</span>
+          <span class="stat-value" id="bingoCount">0</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- BINGO Column Headers -->
+    <div class="bingo-letters" aria-hidden="true">
+      <span>B</span>
+      <span>I</span>
+      <span>N</span>
+      <span>G</span>
+      <span>O</span>
+    </div>
+
+    <!-- 5x5 Bingo Board -->
+    <main class="board-wrapper">
+      <div class="bingo-grid" id="bingoGrid" role="grid" aria-label="Unionville Sightseeing Bingo Board">
+        <!-- 25 squares dynamically generated -->
+      </div>
+    </main>
+
+    <!-- Controls Toolbar -->
+    <footer class="app-footer">
+      <button id="reshuffleBtn" class="btn btn-secondary">
+        <span class="btn-icon">🔄</span> Reshuffle Board
+      </button>
+      <button id="clearMarksBtn" class="btn btn-ghost" title="Clear checked squares without changing item positions">
+        <span>🧹</span> Clear Marks
+      </button>
+    </footer>
+  </div>
+
+  <!-- Fullscreen Confetti Canvas -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- Reshuffle Confirmation Modal -->
+  <div class="modal-overlay" id="reshuffleModal" role="dialog" aria-modal="true" aria-labelledby="reshuffleModalTitle" hidden>
+    <div class="modal-card">
+      <div class="modal-icon-header">⚠️</div>
+      <h2 id="reshuffleModalTitle">Reshuffle Board?</h2>
+      <p>This will randomize the board layout and <strong>clear all your marked squares</strong>.</p>
+      <p class="modal-subtext">Are you sure you want to start a completely new game?</p>
+      <div class="modal-actions">
+        <button id="cancelReshuffleBtn" class="btn btn-ghost">Cancel</button>
+        <button id="confirmReshuffleBtn" class="btn btn-danger">Yes, Reshuffle</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clear Marks Confirmation Modal -->
+  <div class="modal-overlay" id="clearMarksModal" role="dialog" aria-modal="true" aria-labelledby="clearMarksModalTitle" hidden>
+    <div class="modal-card">
+      <div class="modal-icon-header">🧹</div>
+      <h2 id="clearMarksModalTitle">Clear Checked Marks?</h2>
+      <p>This will uncheck all squares, but keep the current board layout intact.</p>
+      <div class="modal-actions">
+        <button id="cancelClearMarksBtn" class="btn btn-ghost">Cancel</button>
+        <button id="confirmClearMarksBtn" class="btn btn-warning">Clear Marks</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Congratulations Modal -->
+  <div class="modal-overlay modal-celebrate" id="celebrateModal" role="dialog" aria-modal="true" aria-labelledby="celebrateTitle" hidden>
+    <div class="modal-card celebrate-card">
+      <div class="celebrate-sparkles">🎉 🏆 🎉</div>
+      <h2 id="celebrateTitle">BINGO!</h2>
+      <p id="celebrateMessage" class="celebrate-msg">Congratulations! You completed a sightseeing line!</p>
+      <div class="celebrate-stats" id="celebrateStats"></div>
+      <div class="modal-actions">
+        <button id="closeCelebrateBtn" class="btn btn-primary btn-large">Keep Exploring!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Help / Info Modal -->
+  <div class="modal-overlay" id="helpModal" role="dialog" aria-modal="true" aria-labelledby="helpTitle" hidden>
+    <div class="modal-card">
+      <div class="modal-icon-header">🏘️</div>
+      <h2 id="helpTitle">Unionville Bingo Rules</h2>
+      <div class="help-content">
+        <p><strong>How to Play:</strong></p>
+        <ul>
+          <li>Stroll down historic Main Street Unionville and look around for the items on your card.</li>
+          <li>Tap any item when you spot it to stamp it as found.</li>
+          <li>Tap again to unmark if tapped by mistake.</li>
+          <li>Complete any <strong>5 in a row</strong> (horizontally, vertically, or diagonally) to score a <strong>BINGO</strong>!</li>
+          <li>Your board and progress are <strong>automatically saved</strong>, so you can lock your phone or close the browser anytime.</li>
+        </ul>
+      </div>
+      <div class="modal-actions">
+        <button id="closeHelpBtn" class="btn btn-primary">Got it!</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a2f"/>
+      <stop offset="100%" stop-color="#12241d"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5d77f"/>
+      <stop offset="100%" stop-color="#c89132"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Card -->
+  <rect width="512" height="512" rx="100" fill="url(#bgGrad)"/>
+  <rect x="24" y="24" width="464" height="464" rx="80" fill="none" stroke="url(#goldGrad)" stroke-width="8" stroke-dasharray="16 10"/>
+
+  <!-- Vintage Bingo Grid Icon representation -->
+  <rect x="96" y="96" width="320" height="320" rx="36" fill="#fdfbf7" stroke="#c89132" stroke-width="6"/>
+  
+  <!-- Grid Lines -->
+  <line x1="96" y1="202" x2="416" y2="202" stroke="#dcd4c3" stroke-width="4"/>
+  <line x1="96" y1="308" x2="416" y2="308" stroke="#dcd4c3" stroke-width="4"/>
+  <line x1="202" y1="96" x2="202" y2="416" stroke="#dcd4c3" stroke-width="4"/>
+  <line x1="308" y1="96" x2="308" y2="416" stroke="#dcd4c3" stroke-width="4"/>
+  
+  <!-- Free Space Maple Leaf in Center -->
+  <circle cx="256" cy="256" r="44" fill="#feecc5"/>
+  <text x="256" y="275" font-family="serif" font-size="50" text-anchor="middle" fill="#c0392b">🍁</text>
+  
+  <!-- Stamp Checks in corners -->
+  <circle cx="150" cy="150" r="32" fill="#c0392b"/>
+  <text x="150" y="162" font-family="sans-serif" font-size="34" font-weight="bold" text-anchor="middle" fill="#ffffff">✓</text>
+  
+  <circle cx="362" cy="362" r="32" fill="#c0392b"/>
+  <text x="362" y="374" font-family="sans-serif" font-size="34" font-weight="bold" text-anchor="middle" fill="#ffffff">✓</text>
+  
+  <text x="362" y="168" font-size="44" text-anchor="middle">🚂</text>
+  <text x="150" y="380" font-size="44" text-anchor="middle">🌸</text>
+  
+  <!-- Bottom Ribbon text -->
+  <text x="256" y="468" font-family="Cinzel, serif" font-size="30" font-weight="bold" letter-spacing="4" text-anchor="middle" fill="#f5d77f">UNIONVILLE</text>
+</svg>
