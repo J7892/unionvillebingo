@@ -1,11 +1,11 @@
 {
-  "name": "Unionville Sightseeing Bingo",
-  "short_name": "Unionville Bingo",
-  "description": "Sightseeing Bingo game for your trip along historic Main Street Unionville",
+  "name": "Port Credit Sightseeing Bingo",
+  "short_name": "Port Credit Bingo",
+  "description": "Sightseeing Bingo game for your trip along Port Credit waterfront and Lakeshore Road",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#1e3a2f",
-  "theme_color": "#1e3a2f",
+  "background_color": "#15384d",
+  "theme_color": "#15384d",
   "orientation": "portrait",
   "icons": [
     {

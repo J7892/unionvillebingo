@@ -1,16 +1,16 @@
 /* ==========================================================================
-   Unionville Sightseeing Bingo - Stylesheet
+   Port Credit Sightseeing Bingo - Stylesheet
    ========================================================================== */
 
 :root {
-  --bg-main: #f7f3eb;
+  --bg-main: #f5f4ef;
   --bg-card: #ffffff;
   --bg-card-alt: #fcfbfa;
-  --bg-header: #1b352a;
+  --bg-header: #102938;
   
-  --primary: #1e3a2f;
-  --primary-light: #2c5443;
-  --primary-dark: #12241d;
+  --primary: #15384d;
+  --primary-light: #22516d;
+  --primary-dark: #0d2331;
   
   --accent-gold: #c89132;
   --accent-gold-light: #fef4dd;

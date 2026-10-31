@@ -1,11 +1,13 @@
 /**
- * Unionville Sightseeing Bingo
+ * Port Credit Sightseeing Bingo
  * Progressive, mobile-optimized, touch-friendly web app.
  */
 
-// Sightseeing Items Pool (30 items)
+// Sightseeing Items Pool (32 items)
 const SIGHTSEEING_ITEMS = [
-  { name: "Old Planing Mill Water Wheel", icon: "⚙️" },
+  { name: "Port Credit Lighthouse", icon: "🗼" },
+  { name: "Sailboat or Marina Yacht", icon: "⛵" },
+  { name: "Credit River or Boardwalk", icon: "🌊" },
   { name: "Historic Train Station", icon: "🚂" },
   { name: "Blue Heritage Plaque", icon: "🏛️" },
   { name: "Weathervane", icon: "🧭" },
@@ -16,10 +18,10 @@ const SIGHTSEEING_ITEMS = [
   { name: "Black Squirrel or Chipmunk", icon: "🐿️" },
   { name: "Church Steeple", icon: "⛪" },
   { name: "Dog Bowl Outside a Shop", icon: "🥣" },
-  { name: "Millennium Bandstand", icon: "🎪" },
-  { name: "Duck or Goose", icon: "🦆" },
+  { name: "Waterfront Gazebo or Bandshell", icon: "🎪" },
+  { name: "Duck, Goose, or Swan", icon: "🦢" },
   { name: "Unique stop sign", icon: "🛑" },
-  { name: "Old Firehall Tower", icon: "🔔" },
+  { name: "Kayak or Paddleboard", icon: "🛶" },
   { name: "Public Art Sculpture", icon: "🗿" },
   { name: "Weeping Willow Tree", icon: "🌳" },
   { name: "Hanging Flower Basket", icon: "🌸" },
@@ -38,8 +40,8 @@ const SIGHTSEEING_ITEMS = [
 ];
 
 const FREE_SPACE_INDEX = 12; // Center of 5x5 grid (row 2, col 2)
-const STORAGE_KEY = "unionville_bingo_state_v3";
-const SOUND_KEY = "unionville_bingo_sound";
+const STORAGE_KEY = "port_credit_bingo_state_v1";
+const SOUND_KEY = "port_credit_bingo_sound";
 
 // All 12 possible winning combinations in a 5x5 grid
 const WINNING_COMBINATIONS = [
@@ -202,8 +204,8 @@ function generateNewBoard() {
     if (i === FREE_SPACE_INDEX) {
       board.push({
         name: "FREE SPACE",
-        subtext: "Main Street",
-        icon: "🍁",
+        subtext: "Port Credit",
+        icon: "🗼",
         isFree: true,
       });
       marked[i] = true; // Free space is checked by default
@@ -406,7 +408,7 @@ function celebrateBingo(bingoCount, isFirst) {
 
   if (totalMarked === 25) {
     titleEl.textContent = "🌟 BLACKOUT BINGO! 🌟";
-    msgEl.textContent = "Incredible! You spotted every single landmark in Unionville!";
+    msgEl.textContent = "Incredible! You spotted every single landmark in Port Credit!";
     statsEl.textContent = "🏆 Complete Sightseeing Master!";
   } else if (bingoCount === 1) {
     titleEl.textContent = "🎉 BINGO! 🎉";

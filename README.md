@@ -1,12 +1,12 @@
-# 🍁 Unionville Sightseeing Bingo
+# ⚓ Port Credit Sightseeing Bingo
 
-A mobile-friendly, touch-responsive web-based bingo game tailored for exploring historic Main Street Unionville.
+A mobile-friendly, touch-responsive web-based bingo game tailored for exploring historic Port Credit (Mississauga's "Village on the Lake").
 
 🎮 **Live Game Link**: [https://j7892.github.io/unionvillebingo/](https://j7892.github.io/unionvillebingo/)
 
 ## ✨ Features
 
-- **30 Sightseeing Items Pool**: Hand-picked landmarks from Unionville including the Old Planing Mill Water Wheel, Millennium Bandstand, Victorian Lampposts, Old Firehall Tower, Canadian flag, Unique stop sign, Cute doggo, and more. Each card shuffles 24 unique items around the central Free Space.
+- **Port Credit Sightseeing Items**: Hand-picked landmarks and spots from Port Credit including the iconic Port Credit Lighthouse, Marina Sailboats & Yachts, Credit River & Boardwalk, Memorial Park Bandshell, Swans, Kayaks, Canadian flags, Ice cream shops, and more. Each card shuffles 24 unique items around the central Free Space.
 - **Classic 5x5 Bingo Grid**: Traditional layout with a dedicated **FREE SPACE** at the center.
 - **Persistent Progress (`localStorage`)**: Your card layout and marked squares automatically save as you play. Feel free to close the tab, lock your screen, or refresh; your progress remains intact.
 - **Accidental Reshuffle Protection**: Reshuffling warns you with a confirmation modal so you don't lose your marked board by accident.
