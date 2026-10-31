@@ -3,7 +3,7 @@
  * Progressive, mobile-optimized, touch-friendly web app.
  */
 
-// 24 Sightseeing Items
+// Sightseeing Items Pool (30 items)
 const SIGHTSEEING_ITEMS = [
   { name: "Old Planing Mill Water Wheel", icon: "⚙️" },
   { name: "Historic Train Station", icon: "🚂" },
@@ -14,13 +14,12 @@ const SIGHTSEEING_ITEMS = [
   { name: "Victorian Lamppost", icon: "🏮" },
   { name: "Chalkboard Sidewalk Menu", icon: "📋" },
   { name: "Black Squirrel or Chipmunk", icon: "🐿️" },
-  { name: "Antique Wine Press", icon: "🍇" },
   { name: "Church Steeple", icon: "⛪" },
-  { name: "Dog Bowl Outside a Shop", icon: "🐕" },
+  { name: "Dog Bowl Outside a Shop", icon: "🥣" },
   { name: "Millennium Bandstand", icon: "🎪" },
   { name: "Duck or Goose", icon: "🦆" },
-  { name: "Shop Sign Shaped Like an Object", icon: "🪧" },
-  { name: "Old Firehall Tower", icon: "🚒" },
+  { name: "Unique stop sign", icon: "🛑" },
+  { name: "Old Firehall Tower", icon: "🔔" },
   { name: "Public Art Sculpture", icon: "🗿" },
   { name: "Weeping Willow Tree", icon: "🌳" },
   { name: "Hanging Flower Basket", icon: "🌸" },
@@ -29,10 +28,17 @@ const SIGHTSEEING_ITEMS = [
   { name: "Patio String Lights", icon: "✨" },
   { name: "Lily Pads or Cattails", icon: "🪷" },
   { name: "Exposed Brick Chimney", icon: "🧱" },
+  { name: "Cute doggo", icon: "🐶" },
+  { name: "Canadian flag", icon: "🇨🇦" },
+  { name: "Ice cream shop", icon: "🍦" },
+  { name: "Someone on a bike", icon: "🚲" },
+  { name: "Fire truck", icon: "🚒" },
+  { name: "City bus", icon: "🚌" },
+  { name: "Musician", icon: "🎷" },
 ];
 
 const FREE_SPACE_INDEX = 12; // Center of 5x5 grid (row 2, col 2)
-const STORAGE_KEY = "unionville_bingo_state_v2";
+const STORAGE_KEY = "unionville_bingo_state_v3";
 const SOUND_KEY = "unionville_bingo_sound";
 
 // All 12 possible winning combinations in a 5x5 grid

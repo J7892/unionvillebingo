@@ -1,4 +1,4 @@
-const CACHE_NAME = "unionville-bingo-v1";
+const CACHE_NAME = "unionville-bingo-v2";
 const ASSETS_TO_CACHE = [
   "./",
   "./index.html",
